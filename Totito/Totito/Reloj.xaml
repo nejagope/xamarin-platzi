@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Totito"
+             x:Class="Totito.Reloj">
+    <ContentPage.Resources>
+        <local:MaquinariaReloj
+            x:Key="Maquinaria"
+            Horas="0"
+            Minutos="0"
+            Segundos="0"
+            />
+
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="TextColor" Value="Blue" />
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        </Style>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid 
+            BindingContext="{Binding Source = {StaticResource Maquinaria} }"
+            Margin="20">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label
+                Text="{Binding Horas, Mode=TwoWay}"
+                Grid.Column="0"
+                Grid.Row="0"
+                />
+
+            <Label
+                Text="{Binding Minutos, Mode=TwoWay}"
+                Grid.Column="1"
+                Grid.Row="0"
+                />
+
+            <Label
+                Text="{Binding Segundos, Mode=TwoWay}"
+                Grid.Column="2"
+                Grid.Row="0"
+                />
+        </Grid>
+        
+        
+    </ContentPage.Content>
+</ContentPage>

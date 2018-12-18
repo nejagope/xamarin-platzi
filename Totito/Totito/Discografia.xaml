@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Totito"
+             x:Class="Totito.Discografia">
+    <ContentPage.Resources>
+        <local:DatosDiscos x:Key="Datos"/>
+        <local:PrecioConverter x:Key="PrecioConverter"/>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding Source={StaticResource Datos}}">
+            <ListView ItemsSource="{Binding Discos, Mode=TwoWay}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image 
+                                    Source="{Binding Portada}"
+                                    WidthRequest="100"
+                                    HeightRequest="100"
+                                    Grid.Column="0"
+                                    />
+                                <StackLayout Grid.Column="1">
+                                    <Label
+                                        Text="{Binding Name}"
+                                        />
+                                    <Label
+                                        Text="{Binding Banda}"
+                                        />
+                                    <Label
+                                        Text="{Binding Fecha, StringFormat='{}{0:dd/MM/yyyy}'}"                                        
+                                        />
+                                    <Label
+                                        Text="{Binding Precio, StringFormat='{}{0:C}'}"
+                                        TextColor="{Binding Precio, Converter={StaticResource PrecioConverter}"
+                                        />
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <!--
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nombre}" Detail="{Binding Banda}"/>
+                    </DataTemplate>   
+                </ListView.ItemTemplate>
+                -->
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Totito"
+             x:Class="Totito.MainPage">
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="Small"/>
+        </Style>
+    </ContentPage.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button
+            x:Name="BtnGrid"
+            Text="Grid (Totito)"            
+            Clicked="BtnGrid_Clicked"
+            Grid.Row="0"
+            Grid.Column="0"
+        />
+        <Button
+            x:Name="BtnAnimacion"
+            Text="Animacion"            
+            Clicked="BtnAnimacion_Clicked"
+            Grid.Row="1"
+            Grid.Column="0"
+        />
+        <Button
+            x:Name="BtnModal"
+            Text="Navegacion Modal"
+            Clicked="BtnModal_Clicked"
+            Grid.Row="2"
+            Grid.Column="0"
+        />
+
+        <Button
+            x:Name="BtnAlert"
+            Text="Mostrar alerta"            
+            Clicked="BtnAlert_Clicked"
+            Grid.Row="3"
+            Grid.Column="0"
+        />
+
+        <Button
+            x:Name="BtnOptions"
+            Text="Mostrar opciones"            
+            Clicked="BtnOptions_Clicked"
+            Grid.Row="4"
+            Grid.Column="0"
+        />
+
+        <Button
+            x:Name="BtnMessaging"
+            Text="Messaging Center"
+            Clicked="BtnMessaging_Clicked"
+            Grid.Row="0"
+            Grid.Column="1"
+        />
+
+        <Button
+            x:Name="BtnReloj"
+            Text="Reloj (Binding context)"
+            Clicked="BtnReloj_Clicked"
+            Grid.Row="1"
+            Grid.Column="1"
+        />
+
+        <Button
+            x:Name="BtnDiscografia"
+            Text="Discos (Templates)"
+            Clicked="BtnDiscografia_Clicked"
+            Grid.Row="2"
+            Grid.Column="1"
+        />
+
+    </Grid>
+        
+    
+</ContentPage>

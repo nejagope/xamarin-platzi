@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Totito.Messaging"
+             Title="MessagingCenter">
+
+    <ContentPage.Resources>
+        <Style x:Key="YellowButton" TargetType='Button'>
+            <Setter Property='WidthRequest' Value='200' />
+            <Setter Property='TextColor' Value='Yellow' />
+        </Style>
+
+        <Style TargetType="Entry">
+            <Style.Triggers>
+                <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                    <Setter Property="BackgroundColor" Value="LawnGreen" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        
+        <StackLayout>
+            
+            <Button
+                Text="Enviar mensaje"
+                x:Name="BtnSendMenssage"
+                Clicked="BtnSendMenssage_Clicked"
+                Style="{StaticResource YellowButton}"
+                />
+
+            <Entry/>
+            <Entry/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
